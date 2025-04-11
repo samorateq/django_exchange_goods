@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="{% static 'style/profile.css' %}">
+</head>
+<body>
+    <header>
+        <a class="nav-link--text-white" href='{% url "main:index" %}'>Главная</a>
+        <a class="nav-link--text-white" href='{% url "ads:catalog" %}'>Смотреть каталог</a>
+        <a class="nav-link--text-white" href='{% url "user:logout" %}'>Выйти</a>
+    </header>
+</body>
+</html>

@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка товара: {{ ad.title }}</title>
+    <link rel="stylesheet" href="{% static 'style/ad_detail.css' %}">
+</head>
+<body>
+    <div class="button-container">
+        <a class="nav-link--text-white" href='{% url "ads:catalog" %}'>Назад к каталогу</a>
+        <a class="nav-link--text-white" href='{% url "main:index" %}'>На Главную</a>
+    </div>
+<div class="wrapper">
+    <div class="container">
+        <h1>Карточка товара</h1>
+        <h2>{{ ad.title }}</h2>
+
+
+        {% if ad.image %}
+            <img src="{{ ad.image.url }}">
+        {% else %}
+            <p>Изображение не доступно</p>
+        {% endif %}
+
+        <h1><a>{{ ad.title }}</a></h1>
+        <p>id-товара: {{ ad.id }}</p>
+        <div class="description-box collapsed" id="descriptionBox">
+            <p>{{ ad.description }}</p>
+        </div>
+        <a href="javascript:void(0);" class="toggle-link" onclick="toggleDescription()">Показать полностью</a>
+        <p>Категория: {{ ad.category }}</p>
+
+        {% if ad.condition == "used" %}
+            <p>Состояние: Б/у</p>
+        {% else %}
+            <p>Состояние: Новое</p>
+        {% endif %}
+
+
+        <p>Дата добавления: {{ ad.created_at|date:"d.m.Y H:i" }}</p>
+
+        
+        {% if ad.user == user or user.is_superuser or user.is_staff %}
+            <a class="edit-button" href="{% url 'ads:update_ad' ad.id %}">Редактировать объявление</a>
+            <form method="post" action="{% url 'ads:delete_ad' ad.id %}">
+                {% csrf_token %}
+                <button type="submit" class="delete-button">Удалить объявление</button>
+            </form>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    function toggleDescription() {
+        const box = document.getElementById('descriptionBox');
+        const link = document.querySelector('.toggle-link');
+        box.classList.toggle('expanded');
+        link.textContent = box.classList.contains('expanded') ? 'Скрыть' : 'Показать полностью';
+    }
+</script>
+

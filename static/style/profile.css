@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #EFE2BA;
+}
+
+.header {
+    margin-top: 20px;
+}
+
+.nav-link--text-white {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #1f1f1f;
+    background: #EFE2BA;
+    
+}
+
+.nav-link--text-white:hover {
+    background: #EFE2BA;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+}

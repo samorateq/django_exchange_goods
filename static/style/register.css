@@ -1,0 +1,150 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f5f1e6;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+}
+
+.wrapper-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px #f1c0a4;
+    background-color: #EFE2BA;
+}
+
+h1 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* .registration-form label {
+    margin-bottom: 5px;
+
+} */
+
+.registration-form input[type="email"],
+.registration-form input[type="password"],
+.registration-form input[type="text"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-button {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    padding: 10px 20px;
+    border: none;
+    background-color: #EFE2BA;
+    color: 1f1f1f;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #EFE2BA;
+    box-shadow: none;
+    position: relative;
+
+}
+
+.extra-links {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.extra-links a {
+    color: #1f1f1f;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
+}
+
+.extra-links_reg{
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.extra-links_reg a {
+    color: #1f1f1f;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.extra-links_reg a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: rgb(124, 57, 57);
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.alert alert-danger alert-dismissible fade show{
+    color: rgb(124, 57, 57);
+    margin-top: 10px;
+}
+
+.nav-link--text-white {
+    position: relative; 
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #1f1f1f;
+    background: #EFE2BA;
+    margin: 10px; 
+    display: inline-block;
+}
+
+.nav-link--text-white:hover {
+    background: #f1c0a4;
+    box-shadow: none;
+    transform: translateY(5px); 
+}
+
+.button-container {
+    position: relative; 
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: row; 
+    gap: 10px; 
+}

@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание объявления</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style/create_ad.css' %}">
+</head>
+<body>
+    <div class="button-container">
+        <a class="nav-link--text-white" href='{% url "ads:catalog" %}'>Назад к каталогу</a>
+        <a class="nav-link--text-white" href='{% url "main:index" %}'>На Главную</a>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <h1>Создание карточки товара</h1>
+            <form class="card-create-form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <label for="id_title" class="form-label">Название товара:</label>
+                {{ form.title }}
+                {% if form.title.errors %}
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        {% for error in form.title.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                
+                <label for="id_description" class="form-label">Описание товара:</label>
+                {{ form.description }}
+                {% if form.description.errors %}
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        {% for error in form.description.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <label for="id_image" class="form-label">Фото товара:</label>
+                {{ form.image }}
+                {% if form.image.errors %}
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        {% for error in form.image.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <label for="id_category" class="form-label">Категория товара:</label>
+                {{ form.category }}
+                {% if form.category.errors %}
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        {% for error in form.category.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                
+                <label for="id_condition" class="form-label">Состояние товара:</label>
+                {{ form.condition }}
+                {% if form.condition.errors %}
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        {% for error in form.condition.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                
+                <button type="submit" class="create-button">Создать объявление о товаре</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
